@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vh;
+    margin: 23.40vh;
+    /* background: #000; */
+    background-image: url('assests/stacked-waves-haikei.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+}
+
+input{
+    color: rgb(255, 255, 255);
+}
+
+.login-form{
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 40px;
+    color: white;
+    box-shadow: 0 0.4px 0.4px rgba(255, 255, 255, 0.5),
+    0 1px 1px rgba(255, 255, 255,0.5),
+    0 2.1px 2.1px rgba(255, 255, 255, 0.5),
+    0 4.4px 4.4px rgba(255, 255, 255, 0.5),
+    0 12px 12px rgba(181, 192, 199, 0.5);
+    border-radius: 10px;
+}
+
+.form-input{
+    font-size: 1.25rem;
+    position: relative;
+    --primary: #2196f3;
+}
+
+.input{
+    all: unset;
+    padding: 1rem;
+    height: 20px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    transition: 150ms
+    cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 12px 0;
+}
+
+.label{
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    color: #d4d4d4;
+    pointer-events: none;
+    transition: 150ms
+    cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus{
+    border: 1px solid white;
+}
+
+.input:is(:focus, :valid) ~ label{
+    transform: translateY(-90%)
+    scale(0.8);
+    background-color: #e06d0f;
+    padding-inline: 0.3rem;
+    color: rgb(255, 255, 255);
+}
+
+.login-form h1{
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+
+.login-form .btn{
+    width: 17rem;
+    margin: 18px 0 9px 0;
+}
+
+.btn{
+    padding: 8px 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.6s;
+    border: none;
+}
+
+.btn:hover{
+    background: transparent;
+    background: rgb(242, 111, 29);
+    box-shadow: 0 0 20px 10px rgba(222, 222, 222, 0.5);
+}
