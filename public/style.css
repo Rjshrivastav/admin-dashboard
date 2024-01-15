@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --text-color: black;
+    --background-color: #edede9;
+    --box-color: white;
+
+    .warning-clr {
+        color: red;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
+    color: var(--text-color);
     font-family: var(--font-family);
 }
+
 
 *::-webkit-scrollbar {
     width: 16px;
@@ -19,17 +32,9 @@
     border-radius: 10px;
 }
 
-
-:root {
-    --font-family: 'Poppins', sans-serif;
-    --text-color: black;
-    --background-color: #edede9;
-    --box-color: white;
-}
-
 main {
     display: grid;
-    grid-template-columns: 16rem auto 14rem;
+    grid-template-columns: 16rem auto 20rem;
     background-color: var(--background-color);
 
 }
@@ -81,6 +86,7 @@ main {
         }
 
         a:hover {
+            cursor: pointer;
             color: blue;
             border-left: 5px solid blue;
         }
@@ -91,9 +97,21 @@ main {
     /* margin-top: rem; */
     width: auto;
 
+    h1 {
+        text-align: center;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
     .date {
-        background-color: var(--box-color);
-        width: fit-content;
+        text-align: center;
+
+        input {
+            background-color: var(--box-color);
+            color: var(--text-color);
+            width: fit-content;
+            border: none;
+        }
     }
 
     .insights {
@@ -157,7 +175,7 @@ main {
                         position: absolute;
                         top: 20px;
                         left: 25px;
-                        color: rgb(0, 0, 0);
+                        color: var(--text-color);
                     }
                 }
 
@@ -221,10 +239,11 @@ main {
             margin-top: 10px;
         }
 
-        div{
+        div {
             overflow-y: scroll;
-            max-height: 50vh;
+            max-height: 53vh;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -239,5 +258,230 @@ main {
 }
 
 .right-container {
-    border: 2px solid black;
+    /* border: 2px solid black; */
+
+    h1 {
+        text-align: center;
+    }
+
+    img {
+        border-radius: 30px;
+        width: 50px;
+        height: 50px;
+
+    }
+
+    .profile {
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 5px;
+        background-color: var(--box-color);
+        border-radius: 10px;
+        padding: 5px;
+
+
+
+        .dark-mode {
+            position: relative;
+
+            .checkbox {
+                position: absolute;
+                width: 35px;
+                height: 35px;
+                opacity: 0;
+
+            }
+
+            svg {
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+            }
+
+            .sun {
+                opacity: 1;
+            }
+
+            .sun path {
+                stroke: yellow;
+            }
+
+            .moon {
+                position: absolute;
+                right: 0px;
+                opacity: 0;
+            }
+        }
+
+        .name {
+            font-size: 14px;
+            margin-left: 10px;
+
+        }
+    }
+
+    .update {
+
+        .update-card {
+            display: grid;
+            grid-auto-flow: column;
+            gap: 10px;
+            align-items: center;
+            background-color: var(--box-color);
+            margin: 5px;
+            border-radius: 10px;
+            height: 70px;
+            padding: 10px;
+        }
+    }
+
+    .s-analytics {
+
+        div {
+            overflow-y: scroll;
+            max-height: 36vh;
+        }
+
+        .s-a-card {
+            background-color: var(--box-color);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            margin: 5px;
+            border-radius: 10px;
+
+            span {
+                font-size: 40px;
+                padding: 10px;
+                background-color: coral;
+                color: white;
+                border-radius: 30px;
+            }
+
+            .text {
+
+                .duration {
+                    font-size: 12px;
+                }
+
+                .quantity {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* media queries */
+
+@media screen and (max-width: 1200px) {
+    main {
+        display: flex;
+        max-height: 70%;
+    }
+
+    .left-container {
+        width: 6rem;
+
+        .logo {
+            font-size: 12px;
+        }
+
+        .close {
+            display: none;
+        }
+    }
+
+    .left-container .left-middle {
+        a {
+            margin: 10px;
+        }
+
+        span {
+            font-size: 35px;
+        }
+
+        h3 {
+            display: none;
+        }
+    }
+
+    .middle-container {
+        width: 50rem;
+
+        .orders div {
+            max-height: 39vh;
+
+        }
+    }
+
+    .middle-container .insights {
+        display: grid;
+        /* grid-template-columns: repeat(1, 1fr); */
+    }
+
+    .right-container {
+
+        width: 20rem;
+
+        .s-analytics {
+            div {
+                max-height: 36vh;
+            }
+        }
+
+        .update {
+
+            .update-card {
+                height: 50px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    main {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .left-container {
+        position: fixed;
+        width: 18rem;
+        z-index: 3;
+
+        .left-top {
+            .logo {
+                display: inline;
+            }
+
+            .close {
+                display: inline;
+                position: absolute;
+                right: 10px;
+                margin-left: 30px;
+                font-size: 35px;
+            }
+
+        }
+
+        .left-middle {
+            h3 {
+                display: inline;
+            }
+
+            a {
+                width: 100%;
+                height: 3.4rem;
+            }
+        }
+
+    }
 }

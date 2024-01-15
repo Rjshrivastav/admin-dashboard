@@ -8,7 +8,7 @@ body{
     min-width: 100vh;
     margin: 23.40vh;
     /* background: #000; */
-    background-image: url('assests/stacked-waves-haikei.png');
+    background-image: url('/assests/Cloudy.svg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     font-family: 'Poppins', sans-serif;
@@ -67,9 +67,10 @@ input{
 .input:is(:focus, :valid) ~ label{
     transform: translateY(-90%)
     scale(0.8);
-    background-color: #e06d0f;
+    background-color: #ffffff;
     padding-inline: 0.3rem;
-    color: rgb(255, 255, 255);
+    color: rgb(0 0 0);
+    border-radius: 10px;
 }
 
 .login-form h1{
@@ -93,6 +94,17 @@ input{
 
 .btn:hover{
     background: transparent;
-    background: rgb(242, 111, 29);
+    background: rgb(255, 255, 255);
     box-shadow: 0 0 20px 10px rgba(222, 222, 222, 0.5);
+}
+
+
+
+/* media queries */
+
+@media screen and (max-width:480px) {
+    body{
+        min-width: 0vh;
+    }
+    
 }
