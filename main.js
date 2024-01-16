@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const serverless = require('serverless-http')
 const session = require('express-session')
 const app = express()
 const port = 3001;
@@ -63,6 +64,9 @@ app.get('/logout', (req, res) => {
     })
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Server is running at http://localhost:${port}`)
 })
+
+// app.use('/.netlify/functions/main', app);
+// module.exports.handler = serverless(app)
