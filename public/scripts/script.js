@@ -1,22 +1,3 @@
-function logout() {
-    fetch('/logout', {
-        method: 'GET',
-        headers: {
-            'content-type': 'application/json'
-        }
-    })
-        .then(response => {
-            if (response.ok) {
-                window.location.href = '/';
-            } else {
-                console.error('Logout failed');
-            }
-        })
-        .catch(error => {
-            console.error('Error during logout:', error)
-        })
-}
-
 const checkbox = document.getElementById("checkbox");
 
 checkbox.addEventListener("change", () => {
@@ -39,3 +20,37 @@ checkbox.addEventListener("change", () => {
         document.documentElement.style.setProperty('--box-color', 'white');
     }
 });
+
+
+const menu = document.querySelector('.left-container');
+const hamburger = document.querySelector('#hamburger-menu');
+const closeBtn = document.querySelector('.close');
+
+hamburger.addEventListener('click', () => {
+    menu.style.display = 'block'
+})
+
+closeBtn.addEventListener('click', () => {
+    menu.style.display = 'none';
+})
+
+
+
+function logout() {
+    fetch('/logout', {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = '/';
+            } else {
+                console.error('Logout failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error during logout:', error)
+        })
+}

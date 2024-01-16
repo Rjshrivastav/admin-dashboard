@@ -14,7 +14,7 @@ let isAuthenticated = false;
 
 // view engine setup 
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'html')
+app.set('view engine', 'ejs')
 
 app.use(session({
     secret: '1234',
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
     if (req.session.isAuthenticated) {
         res.redirect('/')
     } else {
-        res.sendFile(__dirname + '/views/index.html')  
+        res.render('index')  
         
     }
 })
@@ -48,7 +48,7 @@ app.post('/login', (req, res) => {
 
 app.get('/home', (req, res) => {
     if (req.session.isAuthenticated) {
-        res.sendFile(__dirname + '/views/home.html')   
+        res.render('home')   
     } else {
         res.redirect('/')
     }

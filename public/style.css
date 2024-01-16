@@ -5,6 +5,7 @@
     --text-color: black;
     --background-color: #edede9;
     --box-color: white;
+    --dark-hover-color: rgb(255, 89, 18);
 
     .warning-clr {
         color: red;
@@ -54,12 +55,17 @@ main {
 
         .logo h4 {
             font-weight: bolder;
+            font-size: 25px;
             align-items: center;
             cursor: default;
 
             span {
-                color: blue;
+                color: var(--dark-hover-color);
             }
+        }
+
+        .close{
+            display: none;
         }
     }
 
@@ -87,8 +93,11 @@ main {
 
         a:hover {
             cursor: pointer;
-            color: blue;
-            border-left: 5px solid blue;
+            border-left: 5px solid var(--dark-hover-color);
+
+            span{
+                color: var(--dark-hover-color);
+            }
         }
     }
 }
@@ -241,7 +250,7 @@ main {
 
         div {
             overflow-y: scroll;
-            max-height: 53vh;
+            max-height: 47vh;
         }
 
         table {
@@ -281,6 +290,10 @@ main {
         border-radius: 10px;
         padding: 5px;
 
+
+        button{
+            display: none;
+        }
 
 
         .dark-mode {
@@ -456,10 +469,17 @@ main {
         position: fixed;
         width: 18rem;
         z-index: 3;
+        display: none;
+        background-color: var(--box-color);
 
         .left-top {
+            height: 9vh;
+            justify-content: left;
+            margin-left: 25px;
+
             .logo {
                 display: inline;
+                font-size: 22px;
             }
 
             .close {
@@ -482,6 +502,82 @@ main {
                 height: 3.4rem;
             }
         }
+    }
 
+    .middle-container{
+
+        width: 100%;
+
+        >h1{
+            margin-top: 75px;
+            text-align: center;
+            width: 100%;
+        }
+        .date{
+            width: 100%;
+
+            input{
+                text-align: center;
+            }
+        }
+
+        .insights{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            width: 100%;
+
+            h1{
+                margin: 0;
+            }
+
+            .middle{
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+
+        .orders{
+            font-size: 12px;
+
+            h1{
+                font-size: 30px;
+            }
+
+            div tr{
+                height: 30px;
+            }
+
+        }
+
+    }
+
+    .right-container{
+        width: 100%;
+
+        .profile{
+            position: fixed;
+            top: 0;
+            align-items: center;
+            width: 100%;
+            z-index: 2;
+            box-shadow: 0 20px 20px #0000004d;
+            margin: 0;
+            border-radius: 0px;
+
+            button{
+                display: inline-block;
+                background: transparent;
+                cursor: pointer;
+                color: black;
+                /* position: absolute; */
+                left: 1rem;
+                border: none;
+            }
+
+            .dark-mode{
+                position: absolute;
+                right: 85px;
+            }
+        }
     }
 }
